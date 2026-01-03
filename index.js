@@ -41,7 +41,23 @@ let result = exampleObj.hasOwnProperty("age");
 console.log(result);
 
 //4----
-function person() {
-    this.name = "Sardor",
-    this.age = 21,
+function parent() {
+    this.name = "Doniyor";
+    this.age = 43;
 }
+function mashina(name,age) {
+    this.name = name;
+    this.age = age;
+}
+
+const m1 = new mashina("Toyota", 21);
+const m2 = new mashina("BMW", 2);
+mashina.prototype.parent = function () {
+    console.log("Meni yoshim" + this.age);
+    
+}
+m1.parent();
+m2.parent();
+console.log(Object.getPrototypeOf(m1));
+
+//5----
